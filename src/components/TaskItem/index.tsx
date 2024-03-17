@@ -125,6 +125,8 @@ export function TaskItem({
             onChangeText={handleTaskTitleChange}
             value={taskTitle}
             selection={selection}
+            autoCorrect={false}
+            autoCapitalize="sentences"
             onSelectionChange={({ nativeEvent: { selection } }) => {
               setSelection(selection);
             }}
