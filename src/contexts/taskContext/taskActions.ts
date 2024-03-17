@@ -1,32 +1,27 @@
-import { type Task } from 'react-native';
-import { ADD_TASK, EDIT_TASK, REMOVE_TASK, CHECK_TASK_AS_DONE, LOAD_STORAGE_TASKS } from './taskActionTypes';
+import { ADD_TASK, EDIT_TASK, REMOVE_TASK, CHECK_TASK_AS_DONE, LOAD_STORAGE_TASKS, TaskAction } from './taskActionTypes';
+import { ITask } from './taskType';
 
-interface TaskParam {
-  type: string;
-  payload: string | Task | Task[];
-}
-
-export const addTask = (task: Task): TaskParam => ({
+export const addTask = (task: ITask): TaskAction => ({
   type: ADD_TASK,
   payload: task,
 });
 
-export const editTask = (task: Task): TaskParam => ({
+export const editTask = (task: ITask): TaskAction => ({
   type: EDIT_TASK,
   payload: task,
 });
 
-export const loadTasks = (tasks: Task[]): TaskParam => ({
+export const loadTasks = (tasks: ITask[]): TaskAction => ({
   type: LOAD_STORAGE_TASKS,
   payload: tasks,
 });
 
-export const removeTask = (taskId: string): TaskParam => ({
+export const removeTask = (taskId: string): TaskAction => ({
   type: REMOVE_TASK,
   payload: taskId,
 });
 
-export const checkTaskAsDone = (taskId: string): TaskParam => ({
+export const checkTaskAsDone = (taskId: string): TaskAction => ({
   type: CHECK_TASK_AS_DONE,
   payload: taskId,
 });

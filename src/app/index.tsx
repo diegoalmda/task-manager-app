@@ -24,7 +24,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 import theme from "../styles/theme";
 import { NewTaskInput } from "../components/NewTaskInput";
 import { TaskItem } from "../components/TaskItem";
-import { type Task } from "../contexts/taskContext/taskType";
+import { type ITask } from "../contexts/taskContext/taskType";
 import {
   FlatList,
   Keyboard,
@@ -86,7 +86,7 @@ export default function Page(): React.JSX.Element {
               <FlatList
                 ref={listRef}
                 data={tasks}
-                keyExtractor={(item: Task) => item.id}
+                keyExtractor={(item: ITask) => item.id}
                 renderItem={({ item, index }) => (
                   <Animated.View
                     style={{ transform: [{ translateY: animatedValue }] }}

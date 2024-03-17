@@ -1,10 +1,10 @@
-import { TaskAction, type Task } from './taskType';
-import { ADD_TASK, EDIT_TASK, REMOVE_TASK, CHECK_TASK_AS_DONE, LOAD_STORAGE_TASKS } from './taskActionTypes';
+import { ADD_TASK, EDIT_TASK, REMOVE_TASK, CHECK_TASK_AS_DONE, LOAD_STORAGE_TASKS, TaskAction } from './taskActionTypes';
+import { ITask } from './taskType';
 
-const taskReducer = (state: Task[], action: TaskAction): Task[] => {
+const taskReducer = (state: ITask[], action: TaskAction): ITask[] => {
   switch (action.type) {
     case ADD_TASK:
-      return [...state, action.payload];
+      return [...state, action.payload as unknown as ITask];
     case EDIT_TASK:
       return state.map((task) =>
         task.id === action.payload.id ? { ...task, title: action.payload.title } : task
@@ -16,7 +16,7 @@ const taskReducer = (state: Task[], action: TaskAction): Task[] => {
         return task.id === action.payload ? { ...task, done: !task.done } : task;
       });
     case LOAD_STORAGE_TASKS:
-      return  action.payload;
+      return  action.payload as unknown as ITask[];
     default:
       return state;
   }

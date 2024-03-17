@@ -1,19 +1,14 @@
-// React/React Native and expo imports
-import React, { useRef, useState } from 'react';
-import { Alert, Keyboard, type TextInput, type TextInputProps } from 'react-native';
-import { Feather } from '@expo/vector-icons';
-
-// External libs imports
-import { useTheme } from 'styled-components';
-
-// Styles imports
-import { AddButton, Container, IconContainer, InputText } from './styles';
-import { useTaskContext } from '../../contexts/taskContext';
+import React, { useRef, useState } from "react";
+import { Alert, Keyboard, type TextInput } from "react-native";
+import { Feather } from "@expo/vector-icons";
+import { useTheme } from "styled-components";
+import { AddButton, Container, IconContainer, InputText } from "./styles";
+import { useTaskContext } from "../../contexts/taskContext";
 
 export function NewTaskInput(): React.JSX.Element {
   const [isFocused, setIsFocused] = useState(false);
   const [, setIsFilled] = useState(false);
-  const [taskTitle, setTaskTitle] = useState('');
+  const [taskTitle, setTaskTitle] = useState("");
 
   const newTaskInputRef = useRef<TextInput>(null);
 
@@ -30,9 +25,12 @@ export function NewTaskInput(): React.JSX.Element {
       addNewTask(title);
       newTaskInputRef.current?.blur();
       Keyboard.dismiss();
-      setTaskTitle('');
+      setTaskTitle("");
     } else {
-      Alert.alert('Título inválido!', 'O título da tarefa precisa conter entre 1 e 50 caracteres.');
+      Alert.alert(
+        "Título inválido!",
+        "O título da tarefa precisa conter entre 1 e 50 caracteres."
+      );
     }
   }
 

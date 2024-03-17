@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components/native';
+import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
-import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
 import { Dimensions } from 'react-native';
 interface Props {
   finished?: boolean;

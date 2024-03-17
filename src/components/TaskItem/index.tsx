@@ -13,11 +13,11 @@ import {
   InputText,
   TaskGestureHandlerContainer,
 } from "./styles";
-import { type Task } from "../../contexts/taskContext/taskType";
+import { type ITask } from "../../contexts/taskContext/taskType";
 import { useTaskContext } from "../../contexts/taskContext";
 
 interface TaskItemProps {
-  task: Task;
+  task: ITask;
   index: number;
   scrollToPosition: (index: number) => void;
   stopEditing: () => void;
@@ -45,7 +45,7 @@ export function TaskItem({
     setIsFocused(false);
   }
 
-  function handleChangeTaskStatus(id: Task["id"]): void {
+  function handleChangeTaskStatus(id: ITask["id"]): void {
     toggleTaskDone(id);
   }
 
@@ -53,7 +53,7 @@ export function TaskItem({
     setTaskTitle(title);
   }
 
-  function removeTask(id: Task["id"]): void {
+  function removeTask(id: ITask["id"]): void {
     Alert.alert("Atenção", "Tem certeza que deseja excluir esta tarefa?", [
       {
         text: "Cancelar",
