@@ -1,7 +1,7 @@
 {
   "expo": {
     "scheme": "task-manager",
-    "name": "task-manager",
+    "name": "Lista de tarefas",
     "slug": "task-manager",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,7 +10,7 @@
       "**/*"
     ],
     "android": {
-      "package": "com.taskmanager",
+      "package": "com.dalmeidaapps.taskmanager",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
@@ -28,7 +28,7 @@
       [
         "expo-screen-orientation",
         {
-          "initialOrientation": "PORTRAIT"
+          "initialOrientation": "PORTRAIT_UP"
         }
       ]
     ],

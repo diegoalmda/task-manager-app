@@ -1,4 +1,4 @@
-package com.taskmanager
+package com.dalmeidaapps.taskmanager
 
 import android.os.Build
 import android.os.Bundle

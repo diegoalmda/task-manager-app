@@ -83,9 +83,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.taskmanager"
+    namespace "com.dalmeidaapps.taskmanager"
     defaultConfig {
-        applicationId "com.taskmanager"
+        applicationId "com.dalmeidaapps.taskmanager"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
